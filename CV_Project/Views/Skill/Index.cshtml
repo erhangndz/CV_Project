@@ -1,0 +1,54 @@
+﻿@model List<CV_Project.Models.Entity.Skill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="container">Yeteneklerim</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th style="width:300px">Yetenek</th>
+                    <th style="width:500px">Seviye</thstyle="width:500px">
+                    <th style="width: 40px">Yüzde</th>
+                    <th>İşlemler</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@item.SkillName</td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar @item.Color" style="width: @item.SkillIcon%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge @item.Color">@item.SkillIcon%</span></td>
+                    <td>
+                        <a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Sil</a>
+                        <a href="/Skill/UpdateSkill/@item.SkillID" class="btn btn-outline-info btn-sm"> <i class="fas fa-edit"></i>Düzenle</a>
+                    </td>
+                </tr>
+                }
+            
+            </tbody>
+        </table>
+        
+    </div>
+    <!-- /.card-body -->
+</div>
+<div class="container">
+    <a href="/Skill/AddSkill/" class="btn btn-primary">Yeni Yetenek Ekle</a>
+</div>
+

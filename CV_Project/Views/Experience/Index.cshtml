@@ -1,0 +1,39 @@
+﻿@model List<CV_Project.Models.Entity.Experience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<br /><br />
+<h2 class="container">Deneyimlerim</h2>
+<table class="table ui-sortable-handle container">
+    <tr>
+        <th>#</th>
+        <th>Sektör</th>
+        <th>Kurum Adı</th>
+        <th>Unvan</th>
+        <th>Tarih</th>
+
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>@item.Subtitle</td>
+            <td>@item.Description</td>
+            <td>@item.Date</td>
+    
+            <td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExperienceID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Düzenle</a></td>
+        </tr>
+    }
+
+</table>
+<div class="container">
+    <a href="/Experience/AddExperience/" class="btn btn-primary">Yeni Deneyim Ekle</a>
+</div>
+

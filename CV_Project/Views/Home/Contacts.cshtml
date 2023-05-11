@@ -1,0 +1,20 @@
+﻿@model CV_Project.Models.Entity.Contact
+<section class="resume-section" id="certificates">
+    <form method="post">
+        <h3>İLETİŞİM</h3>
+        <label>Ad Soyad</label>
+        @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+        <br />
+        <label>E-Mail</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+        <br />
+        <label>Konu</label>
+        @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+        <br />
+        <label>Mesajınız</label>
+        @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(x=>x.Date,new {@value="DateTime.Now"})
+        <button class="btn btn-primary" type="submit">Gönder</button>
+    </form>
+</section>

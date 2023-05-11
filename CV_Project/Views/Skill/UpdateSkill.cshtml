@@ -1,0 +1,24 @@
+﻿@model CV_Project.Models.Entity.Skill
+@{
+    ViewBag.Title = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br /><br />
+<h3 class="container">Yetenek Güncelleme Sayfası</h3>
+
+
+<form method="post">
+    @Html.HiddenFor(x => x.SkillID)
+    <label>Yetenek</label>
+    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+    <br />
+    <label>Yüzde Derecesi</label>
+    @Html.TextBoxFor(x => x.SkillIcon, new { @class = "form-control" })
+    <br />
+    <label>Buton Rengi</label>
+    @Html.TextBoxFor(x => x.Color, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>

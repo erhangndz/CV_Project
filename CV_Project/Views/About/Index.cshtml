@@ -1,0 +1,37 @@
+﻿@model List<CV_Project.Models.Entity.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<br />
+<br />
+<h2 class="container">Hakkımda</h2>
+<table class="table table-bordered container">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>E-Mail</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Address</td>
+            <td>@item.Phone</td>
+            <td>@item.Mail</td>
+            <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+            <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Düzenle</a></td>
+        </tr>
+    }
+
+</table>
+
