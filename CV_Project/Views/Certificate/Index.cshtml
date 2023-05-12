@@ -1,0 +1,38 @@
+﻿@model List<CV_Project.Models.Entity.Certificate>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+
+
+<br />
+<br />
+<h2 class="container">Sertifikalarım</h2>
+<table class="table ui-sortable-handle container">
+    <tr>
+        <th>#</th>
+        <th>Sertifika</th>
+     
+
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Description</td>
+         
+
+            <td><a href="/Certificate/DeleteCertificate/@item.CertifiacateID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+            <td><a href="/Certificate/UpdateCertificate/@item.CertifiacateID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Düzenle</a></td>
+        </tr>
+    }
+
+</table>
+<div class="container">
+    <a href="/Certificate/AddCertificate/" class="btn btn-primary">Yeni Sertifika Ekle</a>
+</div>

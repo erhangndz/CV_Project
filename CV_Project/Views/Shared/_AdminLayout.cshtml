@@ -1,6 +1,9 @@
 ﻿
 @{
     Layout = null;
+    CV_Project.Models.Entity.DbCVEntities db = new CV_Project.Models.Entity.DbCVEntities();
+
+   var message= db.Contacts.Count();
 }
 
 <!DOCTYPE html>
@@ -53,7 +56,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="~/AdminLTE/erhan (2).jpeg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Erhan Gündüz</a>
@@ -64,76 +67,88 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+         with font-awesome or any other icon font library -->
                         <li class="nav-item ">
                             <a href="/About/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-user-alt"></i>
                                 <p>
                                     Hakkımda
-                                 
+
                                 </p>
                             </a>
-                                                    </li>
+                        </li>
                         <li class="nav-item">
-                            <a href="/Experience/Index/" class="nav-link">  
+                            <a href="/Experience/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
                                     Deneyimlerim
-                                   
+
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Education/Index" class="nav-link">
                                 <i class="nav-icon fas fa-chalkboard-teacher"></i>
                                 <p>
-                                   Eğitim Hayatım
-                                   
-                                  
+                                    Eğitim Hayatım
+
+
                                 </p>
                             </a>
-                                                   </li>
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="/Skill/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-atom"></i>
                                 <p>
                                     Yeteneklerim
-                                   
+
                                 </p>
                             </a>
-                            
+
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-swimmer"  ></i>
+                            <a href="/Interest/Index" class="nav-link">
+                                <i class="nav-icon fas fa-swimmer"></i>
                                 <p>
                                     İlgi Alanlarım
-                                   
+
                                 </p>
                             </a>
-                            
+
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Certificate/Index" class="nav-link">
                                 <i class="nav-icon fas fa-certificate"></i>
                                 <p>
                                     Sertifikalarım
-                                  
+
                                 </p>
                             </a>
-                            
+
                         </li>
-                   
+
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Contact/Index" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
-                                   Gelen Mesajlar
-                                   
+                                    Gelen Mesajlar
+                                    <span class="badge badge-info right">@message</span>
+
                                 </p>
                             </a>
-                            
-                </nav>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Home/Index" class="nav-link">
+                                <i class="nav-icon fas fa-laptop"></i>
+                                <p>
+                                    Siteye Git
+
+                                </p>
+                            </a>
+
+                        </li>
+
+</nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
@@ -146,8 +161,8 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
+            <strong> &copy; @DateTime.Now.Year <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+            Tüm Hakları Saklıdır.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.0.4
             </div>

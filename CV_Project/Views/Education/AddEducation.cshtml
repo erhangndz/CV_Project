@@ -1,0 +1,29 @@
+﻿@model CV_Project.Models.Entity.Education
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+
+<h3 class="container">Yeni Eğitim Ekleme Sayfası</h3>
+<form method="post" class="form-control-feedback">
+    <label>Okul Adı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Fakülte</label>
+    @Html.TextBoxFor(x => x.Subtitle1, new { @class = "form-control" })
+    <br />
+    <label>Bölüm</label>
+    @Html.TextBoxFor(x => x.Subtitle2, new { @class = "form-control" })
+    <br />
+    <label>Genel Not Ortalaması</label>
+    @Html.TextBoxFor(x => x.AvgGrade, new { @class = "form-control" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>

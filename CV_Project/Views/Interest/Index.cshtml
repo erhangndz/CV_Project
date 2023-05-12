@@ -1,0 +1,40 @@
+﻿@model List<CV_Project.Models.Entity.Interest>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<br />
+<br />
+<h2 class="container">İlgi Alanlarım</h2>
+<table class="table ui-sortable-handle container">
+    <tr>
+        <th>#</th>
+        <th>Paragraf 1</th>
+        <th>Paragraf 2</th>
+     
+
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Description1</td>
+            <td>@item.Description2</td>
+         
+
+            <td><a href="/Interest/DeleteInterest/@item.InterestID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+            <td><a href="/Interest/UpdateInterest/@item.InterestID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Düzenle</a></td>
+        </tr>
+    }
+
+</table>
+<div class="container">
+    <a href="/Interest/AddInterest/" class="btn btn-primary">Yeni İlgi Alanı Ekle</a>
+</div>
+
+

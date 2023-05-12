@@ -130,8 +130,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CertificateController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterestController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -342,6 +346,7 @@
     <Content Include="AdminLTE\docs\_layouts\home.html" />
     <Content Include="AdminLTE\docs\_layouts\page.html" />
     <Content Include="AdminLTE\docs\_layouts\post.html" />
+    <Content Include="AdminLTE\erhan %282%29.jpeg" />
     <Content Include="AdminLTE\index.html" />
     <Content Include="AdminLTE\index2.html" />
     <Content Include="AdminLTE\index3.html" />
@@ -2360,6 +2365,18 @@
     <Content Include="Views\Skill\Index.cshtml" />
     <Content Include="Views\Skill\UpdateSkill.cshtml" />
     <Content Include="Views\Skill\AddSkill.cshtml" />
+    <Content Include="Views\Education\Index.cshtml" />
+    <Content Include="Views\Education\AddEducation.cshtml" />
+    <Content Include="Views\Education\UpdateEducation.cshtml" />
+    <Content Include="Views\Interest\Index.cshtml" />
+    <Content Include="Views\Interest\AddInterest.cshtml" />
+    <Content Include="Views\Interest\UpdateInterest.cshtml" />
+    <Content Include="Views\Certificate\Index.cshtml" />
+    <Content Include="Views\Certificate\UpdateCertificate.cshtml" />
+    <Content Include="Views\Certificate\AddCertificate.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\GetContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

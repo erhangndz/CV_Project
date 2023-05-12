@@ -1,0 +1,22 @@
+﻿@model CV_Project.Models.Entity.Certificate
+@{
+    ViewBag.Title = "AddCertificate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<br />
+
+<h3 class="container">Yeni Sertifika Ekleme Sayfası</h3>
+<form method="post" class="form-control-feedback">
+
+    <label>Sertifika</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+
+
+

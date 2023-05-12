@@ -1,0 +1,38 @@
+﻿@model CV_Project.Models.Entity.About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<br />
+
+<h3 class="container"> Hakkımda Güncelleme Sayfası</h3>
+<form method="post" class="form-control-feedback">
+    @Html.HiddenFor(x => x.AboutID)
+    <label>Ad</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <label>Soyad</label>
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    <br />
+    <label>Adres</label>
+    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+    <br />
+    <label>Telefon</label>
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+    <label>E-Mail</label>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+

@@ -1,0 +1,24 @@
+﻿@model CV_Project.Models.Entity.Interest
+@{
+    ViewBag.Title = "UpdateInterest";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+
+<h3 class="container"> İlgi Alanı Güncelleme Sayfası</h3>
+<form method="post" class="form-control-feedback">
+    @Html.HiddenFor(x=>x.InterestID)
+    <label>Paragraf 1</label>
+    @Html.TextAreaFor(x => x.Description1, new { @class = "form-control" })
+    <br />
+    <label>Paragraf 2</label>
+    @Html.TextAreaFor(x => x.Description2, new { @class = "form-control" })
+    <br />
+
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+

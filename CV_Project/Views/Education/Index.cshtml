@@ -1,0 +1,42 @@
+﻿@model List<CV_Project.Models.Entity.Education>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<br />
+<br />
+<h2 class="container">Eğitim Hayatım</h2>
+<table class="table ui-sortable-handle container">
+    <tr>
+        <th>#</th>
+        <th>Okul Adı</th>
+        <th>Fakülte</th>
+        <th>Bölüm</th>
+        <th>Not Ortalaması</th>
+        <th>Tarih</th>
+
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>@item.Subtitle1</td>
+            <td>@item.Subtitle2</td>
+            <td>@item.AvgGrade</td>
+            <td>@item.Date</td>
+
+            <td><a href="/Education/DeleteEducation/@item.EducationID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+            <td><a href="/Education/UpdateEducation/@item.EducationID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Düzenle</a></td>
+        </tr>
+    }
+
+</table>
+<div class="container">
+    <a href="/Experience/AddExperience/" class="btn btn-primary">Yeni Eğitim Ekle</a>
+</div>
