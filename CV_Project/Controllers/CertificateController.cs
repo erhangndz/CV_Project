@@ -37,6 +37,7 @@ namespace CV_Project.Controllers
         {
             var x = repo.GetByID(p.CertifiacateID);
             x.Description = p.Description;
+            x.Date= p.Date;
             repo.Update(x);
             return RedirectToAction("Index");
         }

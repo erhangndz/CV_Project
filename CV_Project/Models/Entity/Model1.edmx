@@ -17,6 +17,10 @@
           <Property Name="Mail" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="ImageURL" Type="nvarchar" MaxLength="200" />
+          <Property Name="Linkedin" Type="nvarchar" MaxLength="100" />
+          <Property Name="Github" Type="nvarchar" MaxLength="100" />
+          <Property Name="Instagram" Type="nvarchar" MaxLength="100" />
+          <Property Name="Facebook" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Certificates">
           <Key>
@@ -24,6 +28,7 @@
           </Key>
           <Property Name="CertifiacateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Contacts">
           <Key>
@@ -108,6 +113,10 @@
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ImageURL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Linkedin" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Github" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Instagram" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Certificate">
           <Key>
@@ -115,6 +124,7 @@
           </Key>
           <Property Name="CertifiacateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -192,6 +202,10 @@
           <EntitySetMapping Name="Abouts">
             <EntityTypeMapping TypeName="DbCVModel.About">
               <MappingFragment StoreEntitySet="Abouts">
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+                <ScalarProperty Name="Github" ColumnName="Github" />
+                <ScalarProperty Name="Linkedin" ColumnName="Linkedin" />
                 <ScalarProperty Name="AboutID" ColumnName="AboutID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
@@ -206,6 +220,7 @@
           <EntitySetMapping Name="Certificates">
             <EntityTypeMapping TypeName="DbCVModel.Certificate">
               <MappingFragment StoreEntitySet="Certificates">
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="CertifiacateID" ColumnName="CertifiacateID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>

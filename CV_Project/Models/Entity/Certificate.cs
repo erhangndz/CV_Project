@@ -16,5 +16,6 @@ namespace CV_Project.Models.Entity
     {
         public int CertifiacateID { get; set; }
         public string Description { get; set; }
+        public string Date { get; set; }
     }
 }

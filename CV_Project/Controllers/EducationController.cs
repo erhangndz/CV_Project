@@ -33,6 +33,10 @@ namespace CV_Project.Controllers
         [HttpPost]
         public ActionResult AddEducation(Education p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
             repo.Insert(p);
             return RedirectToAction("Index");
         }

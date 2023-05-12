@@ -2,37 +2,77 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    int count = 0;
+    string color = "";
+    int id = 0;
+
 }
 
 
 
-<br />
-<br />
-<h2 class="container">Sertifikalarım</h2>
-<table class="table ui-sortable-handle container">
-    <tr>
-        <th>#</th>
-        <th>Sertifika</th>
-     
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
 
-        <th>Sil</th>
-        <th>Düzenle</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        count++;
-        <tr>
-            <th>@count</th>
-            <td>@item.Description</td>
-         
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                                                </div><!-- /.card-header -->
+                  
+                        <div class="card-body">
+                           
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        <!-- timeline time label -->
 
-            <td><a href="/Certificate/DeleteCertificate/@item.CertifiacateID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
-            <td><a href="/Certificate/UpdateCertificate/@item.CertifiacateID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Düzenle</a></td>
-        </tr>
-    }
+                                       
+                                        @foreach (var item in Model)
+                                        {
+                                            id = item.CertifiacateID;
 
-</table>
-<div class="container">
-    <a href="/Certificate/AddCertificate/" class="btn btn-primary">Yeni Sertifika Ekle</a>
-</div>
+                                            if(id%2== 0) { color = "bg-secondary"; } else { color = "bg-dark"; }
+                                            <div class="time-label">
+                                                <span class="@color">
+                                                    @item.Date
+                                                </span> 
+                                            </div>
+
+                                            <div>
+                                                <i class="fas fa-certificate bg-gradient-gray-dark"></i>
+                                                <div class="timeline-item">
+
+
+                                                    <div class="timeline-body">
+                                                        @item.Description
+                                                    </div>
+                                                    <div class="timeline-footer">
+                                                        <a href="/Certificate/UpdateCertificate/@item.CertifiacateID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                                                        <a href="/Certificate/DeleteCertificate/@item.CertifiacateID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    <div class="timeline-inverse">
+                                        <a href="/Certificate/AddCertificate" class="btn btn-primary"><i class="fas fa-plus bg-primary" ></i> </a>
+                                    </div>
+
+                                        </div>
+                                </div>
+                            </div>
+                    
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+       
+    </section>
+</body>
+</html>

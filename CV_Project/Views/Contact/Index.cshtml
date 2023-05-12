@@ -2,35 +2,83 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    int count = 0;
+    
 }
 
-<br />
-<br />
-<h2 class="container">Gelen Mesajlar</h2>
-<table class="table table-bordered container">
-    <tr>
-        <th>#</th>
-        <th>Ad Soyad</th>
-        <th>E-Mail</th>
-        <th>Konu</th>
-        <th>Mesajı Gör</th>
-        <th>Sil</th>
 
-    </tr>
-    @foreach (var item in Model)
-    {
-        count++;
-        <tr>
-            <th>@count</th>
-            <td>@item.NameSurname</td>
-            <td>@item.Mail</td>
-            <td>@item.Subject</td>
-            <td><a href="/Contact/GetContact/@item.ContactID" class="btn btn-info btn-sm"><i class="fas fa-comment-alt"></i>Mesajı Gör</a></td>
-            <td><a href="/Contact/DeleteContact/@item.ContactID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a></td>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
 
-        </tr>
-    }
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
 
-</table>
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                       
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-content">
+                                
+                                    <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="time-label">
+                                            <span class="bg-secondary">
+                                                @(((DateTime)item.Date).ToShortDateString())
+                                            </span>
+                                        </div>
+                                        <!-- /.timeline-label -->
+                                        <!-- timeline item -->
 
+                                        <!-- END timeline item -->
+                                        <!-- timeline item -->
+
+                                        <!-- END timeline item -->
+                                        <!-- timeline item -->
+
+                                        <div>
+                                            <i class="fas fa-envelope bg-info"></i>
+                                            <div class="timeline-item">
+                                                <span class="time"><i class="fas fa-mail-bulk"></i>@item.Mail</span>
+                                                <h3 class="timeline-header"><a href="#">@item.NameSurname</a> "@item.Subject" Konulu bir mesaj gönderdi</h3>
+                                              
+                                                <div class="timeline-body">
+                                                    @item.Message
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    <a href="/Contact/DeleteContact/@item.ContactID" class="btn btn-danger btn-flat btn-sm"><i class="fas fa-trash"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    <!-- END timeline item -->
+                                    <!-- timeline time label -->
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <!-- END timeline item -->
+                                
+                                </div>
+                                </div>
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</body>
+</html>

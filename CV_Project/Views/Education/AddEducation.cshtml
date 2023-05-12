@@ -11,6 +11,7 @@
 <form method="post" class="form-control-feedback">
     <label>Okul Adı</label>
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.Title,"",new {@style="color:red"})
     <br />
     <label>Fakülte</label>
     @Html.TextBoxFor(x => x.Subtitle1, new { @class = "form-control" })
