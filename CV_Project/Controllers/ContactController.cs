@@ -10,6 +10,7 @@ namespace CV_Project.Controllers
     public class ContactController : Controller
     {
        ContactRepository repo= new ContactRepository();
+   
         public ActionResult Index()
         {
            

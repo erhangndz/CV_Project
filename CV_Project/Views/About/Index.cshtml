@@ -35,3 +35,29 @@
 
 </table>
 
+<br />
+<h2 class="container">Sosyal Medya Hesaplarım</h2>
+<table class="table table-bordered container">
+    <tr>
+        <th>#</th>
+        <th>Linkedin</th>
+        <th>GitHub</th>
+        <th>Instagram</th>
+        <th>Facebook</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+       
+        <tr>
+            <th>@item.AboutID </th>
+            <td><a href="@item.Linkedin" target="_blank">Linkedin</a></td>
+            <td><a href="@item.Github" target="_blank">GitHub</a></td>
+            <td><a href="@item.Instagram" target="_blank">Instagram</a></td>
+            <td><a href="@item.Facebook" target="_blank">Facebook</a></td>
+            <td><a href="/About/UpdateSocialMedia/@item.AboutID" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Düzenle</a></td>
+        </tr>
+    }
+
+</table>
+

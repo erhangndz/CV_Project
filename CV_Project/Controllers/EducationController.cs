@@ -11,7 +11,7 @@ namespace CV_Project.Controllers
     public class EducationController : Controller
     {
         EducationRepository repo = new EducationRepository();
-       
+ 
         public ActionResult Index()
         {
             var values= repo.GetList();

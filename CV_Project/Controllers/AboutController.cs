@@ -11,6 +11,7 @@ namespace CV_Project.Controllers
     public class AboutController : Controller
     {
         AboutRepository repo = new AboutRepository();
+      
         public ActionResult Index()
         {
             var values = repo.GetList();
@@ -40,6 +41,25 @@ namespace CV_Project.Controllers
             x.Address = p.Address;
             x.Phone= p.Phone;
             x.Mail= p.Mail;
+            repo.Update(x);
+            return RedirectToAction("Index");
+
+        }
+        [HttpGet]
+        public ActionResult UpdateSocialMedia(int id)
+        {
+            var values = repo.GetByID(id);
+            return View(values);
+
+        }
+        [HttpPost]
+        public ActionResult UpdateSocialMedia(About p)
+        {
+            var x = repo.GetByID(p.AboutID);
+           x.Linkedin= p.Linkedin;
+            x.Github= p.Github;
+            x.Instagram= p.Instagram;
+            x.Facebook= p.Facebook;
             repo.Update(x);
             return RedirectToAction("Index");
 

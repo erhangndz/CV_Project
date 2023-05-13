@@ -57,15 +57,44 @@
                         <img src="~/AdminLTE/erhan (2).jpeg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Erhan Gündüz</a>
+                        <a href="#" class="d-block nav-link">Erhan Gündüz</a>
+
                     </div>
                 </div>
-
+          
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user-cog"></i>
+                                <p>
+                                    Hesap İşlemleri
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Login/Logout" class="nav-link">
+                                        <i class="fas fa-sign-out-alt nav-icon"></i>
+                                        <p>Çıkış Yap</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Home/Index" class="nav-link">
+                                        <i class="fas fa-laptop-house nav-icon"></i>
+                                        <p>Siteye Git</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
                         <li class="nav-item ">
                             <a href="/About/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-user-alt"></i>
@@ -86,7 +115,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="/Education/Index" class="nav-link">
-                                <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                                <i class="nav-icon fas fa-graduation-cap"></i>
                                 <p>
                                     Eğitim Hayatım
 
@@ -96,7 +125,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="/Skill/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-atom"></i>
+                                <i class="nav-icon fas fa-code"></i>
                                 <p>
                                     Yeteneklerim
 
@@ -135,18 +164,9 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Home/Index" class="nav-link">
-                                <i class="nav-icon fas fa-laptop"></i>
-                                <p>
-                                    Siteye Git
+                       
 
-                                </p>
-                            </a>
-
-                        </li>
-
-                </nav>
+</nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

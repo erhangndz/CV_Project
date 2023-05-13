@@ -33,5 +33,6 @@ namespace CV_Project.Models.Entity
         public virtual DbSet<Interest> Interests { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
     }
 }

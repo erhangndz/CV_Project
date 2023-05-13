@@ -11,6 +11,7 @@ namespace CV_Project.Controllers
     public class SkillController : Controller
     {
         SkillsRepository repo= new SkillsRepository();
+       
         public ActionResult Index()
         {
            var values= repo.GetList();

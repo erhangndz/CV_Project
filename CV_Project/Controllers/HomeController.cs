@@ -7,8 +7,10 @@ using CV_Project.Models.Entity;
 
 namespace CV_Project.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
+    
         DbCVEntities db= new DbCVEntities();
         public ActionResult Index()
         {

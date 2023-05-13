@@ -11,6 +11,7 @@ namespace CV_Project.Controllers
     public class ExperienceController : Controller
     {
         ExperienceRepository repo= new ExperienceRepository();
+      
         public ActionResult Index()
         {
             var values= repo.GetList();

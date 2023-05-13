@@ -11,6 +11,7 @@ namespace CV_Project.Controllers
     public class InterestController : Controller
     {
        InterestRepository repo= new InterestRepository();
+       
         public ActionResult Index()
         {
             var values= repo.GetList();

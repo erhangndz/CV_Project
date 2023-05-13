@@ -1,0 +1,27 @@
+﻿@model CV_Project.Models.Entity.About
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+
+<h3 class="container"> Hakkımda Güncelleme Sayfası</h3>
+<form method="post" class="form-control-feedback">
+    @Html.HiddenFor(x => x.AboutID)
+    <label>Linkedin</label>
+    @Html.TextBoxFor(x => x.Linkedin, new { @class = "form-control" })
+    <br />
+    <label>GitHub</label>
+    @Html.TextBoxFor(x => x.Github, new { @class = "form-control" })
+    <br />
+    <label>Instagram</label>
+    @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control" })
+    <br />
+    <label>Facebook</label>
+    @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
